@@ -1,0 +1,31 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block styles %}
+
+{{ super() }}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+{% endblock %}
+
+
+{% block title %}Flask Website using Marvel API{% endblock %}
+
+
+{% block content %}
+<div class="jumbotron text-center">
+    <div class="container">
+        {% for character in characters %}
+      <h3 class="display-4">{{character['name']}}</h3>
+      <p class="lead">{{character['description']}}</p>
+        <h3>Apperances: </h3>
+        <ul>
+        {% for series in character['series']['items'] %}
+        <li>{{ series['name'] }}</li>
+        {% endfor %}
+        </ul>
+      <hr>
+        {% endfor %}
+
+    </div>
+</div>
+
+{% endblock %}

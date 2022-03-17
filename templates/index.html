@@ -1,0 +1,24 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block styles %}
+
+{{ super() }}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+{% endblock %}
+
+
+{% block title %}Flask Website using Marvel API{% endblock %}
+
+
+{% block content %}
+<div class="jumbotron text-center">
+    <div class="container">
+      <h1 class="display-4">Flask Website using Marvel API</h1>
+      <p class="lead">Check out some of the options</p>
+      <hr class="my-4">
+      <a class="btn btn-warning btn-lg" href="/characters" role="button">Characters</a>
+
+    </div>
+</div>
+
+{% endblock %}
